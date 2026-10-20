@@ -1,0 +1,61 @@
+.organization-logo {
+  display: flex;
+  width: 180px;
+  height: 78px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 11px 14px;
+  background: #fff;
+  border: 1px solid #d5d9d6;
+  box-shadow: 0 6px 18px rgba(27, 43, 55, 0.06);
+}
+
+.organization-logo:hover {
+  border-color: #a67855;
+  text-decoration: none;
+}
+
+.organization-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 52px;
+  object-fit: contain;
+}
+
+.organization-logo img.organization-logo-seal {
+  max-height: 58px;
+}
+
+.organization-logo img.organization-logo-invert {
+  filter: invert(1);
+}
+
+@media (max-width: 760px) {
+  .experience-meta {
+    grid-template-rows: auto auto auto;
+  }
+
+  .experience-index {
+    grid-row: 1 / 4;
+  }
+
+  .organization-logo {
+    grid-column: 2;
+    width: 160px;
+    height: 70px;
+    margin-top: 11px;
+  }
+
+  .experience-meta > span:last-child {
+    grid-column: 2;
+  }
+}
+
+@media print {
+  .organization-logo {
+    box-shadow: none;
+  }
+}

@@ -84,3 +84,88 @@ for (const publication of publicationLinks) {
   link.setAttribute('aria-label', `${publication.title} — open publication`);
   heading.replaceChildren(link);
 }
+
+const organizationLogos = [
+  {
+    name: 'University at Buffalo',
+    image: 'assets/organizations/ub-lockup.png',
+    url: 'https://www.buffalo.edu/',
+    width: 418,
+    height: 126
+  },
+  {
+    name: 'Institute of Chemical Technology',
+    image: 'assets/organizations/ict-mumbai.png',
+    url: 'https://www.ictmumbai.edu.in/',
+    width: 128,
+    height: 128,
+    style: 'seal'
+  },
+  {
+    name: 'Vesuvius Foseco',
+    image: 'assets/organizations/foseco-lockup.svg',
+    url: 'https://www.foseco.com/en',
+    width: 262,
+    height: 69
+  },
+  {
+    name: 'Amogh Chemicals',
+    image: 'assets/organizations/amogh-chemicals.png',
+    url: 'https://www.amoghchemicals.in/',
+    width: 1096,
+    height: 529
+  },
+  {
+    name: 'Snowtech Equipment',
+    image: 'assets/organizations/snowtech.png',
+    url: 'https://www.snowtechpro.com/',
+    width: 128,
+    height: 128,
+    style: 'seal'
+  },
+  {
+    name: 'Institute of Chemical Technology',
+    image: 'assets/organizations/ict-mumbai.png',
+    url: 'https://www.ictmumbai.edu.in/',
+    width: 128,
+    height: 128,
+    style: 'seal'
+  },
+  {
+    name: 'Godrej Industries',
+    image: 'assets/organizations/godrej-industries.svg',
+    url: 'https://www.godrejindustries.com/',
+    style: 'invert'
+  },
+  {
+    name: 'Approcopp Engineering',
+    image: 'assets/organizations/approcopp.png',
+    url: 'https://in.linkedin.com/company/approcoppengineering',
+    width: 99,
+    height: 30
+  }
+];
+
+document.querySelectorAll('#experience .experience-meta').forEach((meta, index) => {
+  const organization = organizationLogos[index];
+  const date = meta.querySelector('p');
+  if (!organization || !date || meta.querySelector('.organization-logo')) return;
+
+  const link = document.createElement('a');
+  link.className = 'organization-logo';
+  link.href = organization.url;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.setAttribute('aria-label', `Visit the ${organization.name} website`);
+
+  const image = document.createElement('img');
+  image.src = organization.image;
+  image.alt = `${organization.name} logo`;
+  image.loading = 'lazy';
+  if (organization.width) image.width = organization.width;
+  if (organization.height) image.height = organization.height;
+  if (organization.style) image.classList.add(`organization-logo-${organization.style}`);
+
+  link.append(image);
+  date.insertAdjacentElement('afterend', link);
+});
