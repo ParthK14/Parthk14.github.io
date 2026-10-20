@@ -13,7 +13,7 @@ const profileHeading = document.querySelector('#about .section-heading .eyebrow'
 if (profileHeading) profileHeading.textContent = '06 / PROFILE';
 
 const resumeHeading = document.querySelector('#cv .eyebrow');
-if (resumeHeading) resumeHeading.textContent = '07 / RÉSUMÉ';
+if (resumeHeading) resumeHeading.textContent = '07 / CV';
 
 const contactHeading = document.querySelector('#contact > .eyebrow');
 if (contactHeading) contactHeading.textContent = '08 / CONTACT';
